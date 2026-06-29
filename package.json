@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "node node_modules/typescript/lib/tsc.js",
     "start": "node dist/server.js",
     "dev": "ts-node-dev src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
