@@ -9,7 +9,8 @@ app.use(express.json());
 
 // Routes
 import { apiKeyAuth } from './middleware/auth.middleware';
-app.use('/api/v1/panchang', apiKeyAuth, panchangRoutes);
+import { apiRateLimiter } from './middleware/rateLimit.middleware';
+app.use('/api/v1/panchang', apiRateLimiter, apiKeyAuth, panchangRoutes);
 
 // Error handling middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
